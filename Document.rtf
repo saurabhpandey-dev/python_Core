@@ -1,0 +1,485 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.10586}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 What is Python?\par
+Introduction: Python is a general-purpose programming language known for its simplicity and ease of use. Python is used in many fields like data science and machine learning, web development, scripting and automation, embedded systems and IoT, and much more.\par
+Common Use Cases: Python is used in data science, machine learning, web development, cybersecurity, automation and microcomputers like the Raspberry Pi and MicroPython-compatible boards.\par
+Variables\par
+Declaring Variables: To declare a variable, you start with the variable name followed by the assignment operator (=) and then the value. This can be a number, string, boolean, etc. Here are some examples:\par
+name = 'John Doe'\par
+age = 25\par
+Naming Conventions for Variables: Here are the naming conventions you should use for variables:\par
+\par
+Variable names can only start with a letter or an underscore (_), not a number.\par
+Variable names can only contain alphanumeric characters (a-z, A-Z, 0-9) and underscores (_).\par
+Variable names are case-sensitive \f1\emdash  age, Age, and AGE are all considered unique.\par
+Variable names cannot be one of Python\rquote s reserved keywords such as if, class, or def.\par
+Variables names with multiple words are separated by underscores. Ex. snake_case.\par
+Comments\par
+Single Line Comments: These types of comments should be used for short notes you wish to leave in your code.\par
+# This is a single line comment\par
+Multi-line Strings: These types of strings can be used to leave larger notes or to comment out sections of code.\par
+"""\par
+This is a multi-line string.\par
+Here is some code commented out.\par
+\par
+name = 'John Doe'\par
+age = 25\par
+"""\par
+print() Function: To print data to the console, you can use the print() function like this:\par
+print('Hello world!') # Hello world!\par
+Common Data Types in Python\par
+Introduction: Python is a dynamically-typed language like JavaScript, meaning you don't need to explicitly declare types for variables. The language knows what the type of a variable is based on what you assign to the variable.\par
+Integer: A whole number without decimals:\par
+my_integer_var = 10\par
+print('Integer:', my_integer_var) # Integer: 10\par
+Float: A number with decimals:\par
+my_float_var = 4.50\par
+print('Float:', my_float_var) # Float: 4.5\par
+String: A sequence of characters wrapped in quotes:\par
+my_string_var = 'hello'\par
+print('String:', my_string_var) # String: hello\par
+Boolean: A value representing either True or False:\par
+my_boolean_var = True\par
+print('Boolean:', my_boolean_var) # Boolean: True\par
+Set: An unordered collection of unique elements:\par
+my_set_var = \{7, 5, 8\}\par
+print('Set:', my_set_var) # Set: \{7, 5, 8\}\par
+Dictionary: A collection of key-value pairs, enclosed in curly braces:\par
+my_dictionary_var = \{"name": "Alice", "age": 25\}\par
+print('Dictionary:', my_dictionary_var) # Dictionary: \{'name': 'Alice', 'age': 25\}\par
+Tuple: An immutable ordered collection, enclosed in parentheses:\par
+my_tuple_var = (7, 5, 8)\par
+print('Tuple:', my_tuple_var) # Tuple: (7, 5, 8)\par
+Range: A sequence of numbers, often used in loops:\par
+my_range_var = range(5)\par
+print(my_range_var) # range(0, 5)\par
+List: An ordered collection of elements that supports different data types:\par
+my_list = [22, 'Hello world', 3.14, True]\par
+print(my_list) # [22, 'Hello world', 3.14, True]\par
+None: A special value that represents the absence of a value:\par
+my_none_var = None\par
+print('None:', my_none_var) # None: None\par
+Immutable and Mutable Types\par
+Immutable Types: These types cannot change once declared, although you can point their variables at something new, which is called reassignment. They include integer, float, complex, boolean, string, tuple, range, and None.\par
+Mutable Types: These types can change once declared. You can add, remove, or update their items. They include collection types such as list, set, and dictionary.\par
+type() Function: To see the type for a variable, you can use the type() function like this:\par
+greeting = 'Hello there!'\par
+age = 21\par
+\par
+print(type(greeting)) # <class 'str'>\par
+print(type(age)) # <class 'int'>\par
+isinstance() Function: This is used to check if a variable matches a specific data type:\par
+greeting = 'Hello world'\par
+name = 'John Doe'\par
+\par
+print(isinstance(greeting, str)) # True\par
+print(isinstance(name, int)) # False\par
+Working with Strings\par
+Definition: As you recall from JavaScript, strings are immutable which means you can not change them after they have been created. In Python, you can use either single or double quotes. It is recommended to choose a rule and stick with it:\par
+developer = 'Jessica'\par
+city = "Los Angeles"\par
+Accessing Characters from Strings: You can access characters from strings by using bracket notation like this:\par
+my_str = 'Hello world'\par
+\par
+print(my_str[0])  # H\par
+print(my_str[6])  # w\par
+\par
+print(my_str[-1])  # d\par
+print(my_str[-2]) # l\par
+Escaping Strings: You can use a backslash (\\) if your string contains quotes like this:\par
+msg = 'It\\'s a sunny day'\par
+quote = "She said, \\"Hello!\\""\par
+String Concatenation: To concatenate strings, you can use the + operator like this:\par
+developer = 'Jessica'\par
+print('My name is ' + developer + '.') # My name is Jessica.\par
+Another way to concatenate strings is by using the += operator. This is used to perform concatenation and assignment in the same step like this:\par
+\par
+greeting = 'My name is '\par
+developer = 'Jessica.'\par
+\par
+greeting += developer\par
+print(greeting) # My name is Jessica.\par
+f-strings: This is short for formatted string literals. It allows you to handle interpolation and also do some concatenation with a compact and readable syntax:\par
+developer = 'Jessica'\par
+greeting = f'My name is \{developer\}.'\par
+print(greeting) # My name is Jessica.\par
+String Slicing: This is when you can extract portions of a string. Here is the basic syntax:\par
+str[start:stop:step]\par
+The start position represents the index where the extraction should begin. The stop position is where the slice should end. This position is non inclusive. The step position represents the interval to increment for the slicing. Here are some examples:\par
+\par
+message = 'Python is fun!'\par
+\par
+print(message[0:6])  # Python\par
+print(message[7:])  # is fun!\par
+print(message[::2])  # Pto sfn\par
+Getting the Length of a String: The len() function is used to return the number of the characters in the string:\par
+developer = 'Jessica'\par
+\par
+print(len(developer)) # 7\par
+Working with the in operator\par
+in Operator: This returns a boolean that specifies whether the character or characters exist in the string or not:\par
+my_str = 'Hello world'\par
+\par
+print('Hello' in my_str)  # True\par
+print('hey' in my_str)    # False\par
+print('hi' in my_str)    # False\par
+print('e' in my_str)  # True\par
+print('f' in my_str)  # False\par
+Common String Methods\par
+str.upper(): This returns a new string with all characters converted to uppercase:\par
+developer = 'Jessica'\par
+\par
+print(developer.upper()) # JESSICA\par
+str.lower(): This returns a new string with all characters converted to lowercase:\par
+developer = 'Jessica'\par
+\par
+print(developer.lower()) # jessica\par
+str.strip(): This returns a copy of the string with specified leading and trailing characters removed (if no argument is passed to the method, it removes leading and trailing whitespace).\par
+greeting = '  hello world  '\par
+\par
+trimmed_my_str = greeting.strip()\par
+print(trimmed_my_str)  # 'hello world'\par
+replace(): This returns a new string with all occurrences of the old string replaced by a new one.\par
+greeting = 'hello world'\par
+\par
+replaced_my_str = greeting.replace('hello', 'hi')\par
+print(replaced_my_str)  # 'hi world'\par
+split(): This is used to split a string into a list using a specified separator. A separator is a string specifying where the split should happen.\par
+dashed_name = 'example-dashed-name'\par
+\par
+split_words = dashed_name.split('-')\par
+print(split_words)  # ['example', 'dashed', 'name']\par
+join(): This is used to join elements of an iterable into a string with a separator. An iterable is a collection of elements that can be looped over like a list, string or a tuple.\par
+example_list = ['example', 'dashed', 'name']\par
+\par
+joined_str = ' '.join(example_list)\par
+print(joined_str)  # example dashed name\par
+str.startswith(prefix): This returns a boolean indicating if a string starts with the specified prefix:\par
+developer = 'Naomi'\par
+\par
+result = developer.startswith('N')\par
+print(result)  # True\par
+str.endswith(suffix): This returns a boolean indicating if a string ends with the specified suffix:\par
+developer = 'Naomi'\par
+\par
+result = developer.endswith('N')\par
+print(result)  # False\par
+str.find(): This returns the index for the first occurrence of a substring. If one is not found, then -1 is returned:\par
+developer = 'Naomi'\par
+\par
+result = developer.find('N')\par
+print(result)  # 0\par
+\par
+city = 'Los Angeles'\par
+print(city.find('New')) # -1\par
+str.count(substring): This counts how many times a substring appears in a string:\par
+city = 'Los Angeles'\par
+print(city.count('e')) # 2\par
+str.capitalize(): This returns a new string with the first character capitalized and the other characters lowercased:\par
+dessert = 'chocolate cake'\par
+print(dessert.capitalize()) # Chocolate cake\par
+str.isupper(): This returns True if all letters in the string are uppercase and False if otherwise:\par
+dessert = 'chocolate cake'\par
+print(dessert.isupper()) # False\par
+str.islower(): This returns True if all letters in the string are lowercase and False if otherwise:\par
+dessert = 'chocolate cake'\par
+print(dessert.islower()) # True\par
+str.title(): This returns a new string with the first letter of each word capitalized:\par
+city = 'los angeles'\par
+print(city.title()) # Los Angeles\par
+str.maketrans(): This method is used to create a table of 1 to 1 character mappings for translation. It is often used with the translate() method which applies that table to a string and return the translated result.\par
+trans_table = str.maketrans('abc', '123')\par
+print(trans_table) # \{97: 49, 98: 50, 99: 51\}\par
+\par
+result = 'abcabc'.translate(trans_table)\par
+print(result)  # 123123\par
+Common Operations used with Integers and Floats\par
+Basic Math Operations: In Python, you can do basic math operations with integers and floats including addition, subtraction, multiplication and division:\par
+int_1 = 56\par
+int_2 = 12\par
+float_1 = 5.4\par
+float_2 = 12.0\par
+\par
+# Addition\par
+\par
+print('Integer Addition:', int_1 + int_2) # Integer Addition: 68\par
+print('Float Addition:', float_1 + float_2) # Float Addition: 17.4\par
+\par
+# Subtraction\par
+\par
+print('Int Subtraction:', int_1 - int_2) # Int Subtraction: 44\par
+print('Float Subtraction:',  float_2 - float_1) # Float Subtraction: 6.6\par
+\par
+# Multiplication\par
+\par
+print('Int Multiplication:', int_1 * int_2) # Int Multiplication: 672\par
+print('Float Multiplication:', float_2 * float_1) # Float Multiplication: 64.80000000000001\par
+\par
+# Division\par
+\par
+print('Division:', int_1 / int_2) # Division: 4.666666666666667\par
+print('Float Division:', float_2 / float_1) # Float Division: 2.222222222222222\par
+When you add a float and an integer, the result will be converted to a float like this:\par
+\par
+int_1 = 56\par
+float_1 = 5.4\par
+\par
+print(int_1 + float_1) # 61.4\par
+Modulo Operator (%): This returns the remainder when a number is divided by another number:\par
+int_1 = 56\par
+int_2 = 12\par
+\par
+print(int_1 % int_2) # 8\par
+Floor Division (//): This operator is used to divide two numbers and round down the result to the nearest whole number:\par
+int_1 = 56\par
+int_2 = 12\par
+\par
+print(int_1 // int_2) # 4\par
+Exponentiation Operator (**): This operator is used to raise a number to the power of another:\par
+int_1 = 4\par
+int_2 = 2\par
+\par
+print(int_1 ** int_2) # 16\par
+float() Function: You can use this function to convert an integer to float.\par
+num = 4\par
+\par
+print(float(num)) # 4.0\par
+int() Function: You can use this function to convert an float to an integer.\par
+num = 4.0\par
+\par
+print(int(num)) # 4\par
+round() Function: This is used to round a number to the nearest whole integer:\par
+num_1 = 3.4\par
+num_2 = 7.7\par
+\par
+print(round(num_1)) # 3\par
+print(round(num_2)) # 8\par
+abs() Function: This is used to return the absolute value of a number:\par
+num = -13\par
+\par
+print(abs(num)) # 13\par
+pow() Function: This is used to raise a number to the power of another:\par
+result = pow(2, 3) \par
+print(result)  # 8\par
+Augmented Assignments\par
+Definition: Augmented assignment combines a binary operation with an assignment in one step. It takes a variable, applies an operation to it with another value, and stores the result back into the same variable.\par
+# Addition assignment \par
+my_var = 10\par
+my_var += 5\par
+\par
+print(my_var) # 15\par
+\par
+# Subtraction assignment\par
+count = 14\par
+count -= 3\par
+\par
+print(count) # 11\par
+\par
+# Multiplication assignment \par
+product = 65\par
+product *= 7\par
+\par
+print(product) # 455\par
+\par
+# Division assignment \par
+price = 100\par
+price /= 4\par
+\par
+print(price) # 25.0\par
+\par
+# Floor Division assignment \par
+total_pages = 23\par
+total_pages //= 5\par
+\par
+print(total_pages) # 4\par
+\par
+# Modulo assignment \par
+bits = 35\par
+bits %= 2\par
+\par
+print(bits) # 1\par
+\par
+# Exponentiation assignment \par
+power = 2\par
+power **= 3\par
+\par
+print(power) # 8\par
+There are other augmented assignment operators too, like those for bitwise operators. They include &=, ^=, >>=, and <<=.\par
+\par
+Working with Functions\par
+Definition: Functions are reusable pieces of code that take inputs (arguments) and returns an output. To call a function, you need to reference the function name followed by a set of parenthesis:\par
+# Defining a function\par
+\par
+def get_sum(num_1, num_2):\par
+    return num_1 + num_2\par
+\par
+result = get_sum(3, 4) # function call\par
+print(result) # 7\par
+If a function does not explicitly return a value, then the default return value is None:\par
+\par
+def greet():\par
+    print('hello') \par
+\par
+result = greet() # hello\par
+print(result) # None\par
+You can also supply default values to parameters like this:\par
+\par
+def get_sum(num_1, num_2=2):\par
+    return num_1 + num_2\par
+\par
+result = get_sum(3) \par
+print(result) # 5\par
+If you call the function without the correct number of arguments, you will get a TypeError:\par
+\par
+def calculate_sum(a, b):\par
+    print(a + b)\par
+\par
+calculate_sum()\par
+\par
+# TypeError: calculate_sum() missing 2 required positional arguments: 'a' and 'b'\par
+Common Built-in Functions\par
+input() Function: This is used to prompt the user for some input:\par
+name = input('What is your name?') # User types 'Kolade' and presses Enter  \par
+print('Hello', name) # Hello Kolade\par
+int() Function: This is used to convert a number, boolean, or a numeric string into an integer:\par
+print(int(3.14)) # 3\par
+print(int('42')) # 42\par
+print(int(True)) # 1\par
+print(int(False)) # 0 \par
+Scope in Python\par
+Local Scope: This is when a variable declared inside a function or class can only be accessed within that function or class.\par
+def my_func():\par
+    num = 10\par
+    print(num)\par
+Enclosing Scope: This is when a function that's nested inside another function can access the variables of the function it's nested within.\par
+def outer_func():\par
+    msg = 'Hello there!'\par
+    \par
+    def inner_func():\par
+        print(msg)\par
+    inner_func()\par
+\par
+print(outer_func()) # Hello there!\par
+Global Scope: This refers to variables that are declared outside any functions or classes which can be accessed from anywhere in the program.\par
+tax = 0.70 \par
+\par
+def get_total(subtotal):\par
+    total = subtotal + (subtotal * tax)\par
+    return total\par
+\par
+print(get_total(100))  # 170.0\par
+Built-in Scope: Reserved names in Python for predefined functions, modules, keywords, and objects.\par
+print(str(45)) # '45'\par
+print(type(3.14)) # <class 'float'>\par
+print(isinstance(3, str)) # False\par
+Comparison Operators\par
+Equal (==): Checks if two values are equal:\par
+print(3 == 4) # False\par
+Not equal (!=): Checks if two values are not equal:\par
+print(3 != 4) # True\par
+Strictly greater than (>): Checks if one value is greater than another:\par
+print(3 > 4) # False\par
+Strictly less than (<): Checks if one value is less than another:\par
+print(3 < 4) # True\par
+Greater than or equal(>=): Checks if one value is greater than or equal to another:\par
+print(3 >= 4) # False\par
+Less than or equal(<=): Checks if one value is less than or equal to another:\par
+print(3 <= 4) # True\par
+Working with if, elif and else Statements\par
+if Statements: These are conditions used to determine if something is true or not. If the condition evaluates to True, then that block of code will run.\par
+age = 18\par
+\par
+if age >= 18:\par
+    print('You are an adult') # You are an adult\par
+elif Clause: These are conditions that come after an if statement. An elif clause runs only if all previous conditions evaluate to False and its own condition evaluates to True.\par
+age = 16\par
+\par
+if age >= 18:\par
+    print('You are an adult')\par
+elif age >= 13:\par
+    print('You are a teenager')  # You are a teenager\par
+else Clause: This will run if no other conditions evaluate to True.\par
+age = 12\par
+\par
+if age >= 18:\par
+    print('You are an adult')\par
+elif age >= 13:\par
+    print('You are a teenager')\par
+else:\par
+    print('You are a child')  # You are a child\par
+You can also use nested if statements like this:\par
+\par
+is_citizen = True\par
+age = 25\par
+\par
+if is_citizen:\par
+    if age >= 18:\par
+        print('You are eligible to vote') # You are eligible to vote\par
+else:\par
+    print('You are not eligible to vote')\par
+Truthy and Falsy Values\par
+Definition: In Python, every value has an inherent boolean value, or a built-in sense of whether it should be treated as True or False in a logical context. Many values are considered truthy, that is, they evaluate to True in a logical context. Others are falsy, meaning they evaluate to False. Here are some examples of falsy values:\par
+None\par
+False\par
+Integer 0\par
+Float 0.0\par
+Empty strings ''\par
+Other values like non-zero numbers, and non-empty strings are truthy.\par
+\par
+Working with the bool() Function\par
+Definition: If you want to check whether a value is truthy or falsy, you can use the built-in bool() function. It explicitly converts a value to its boolean equivalent and returns True for truthy values and False for falsy values. Here are a few examples:\par
+print(bool(False)) # False\par
+print(bool(0))  # False\par
+print(bool('')) # False\par
+\par
+print(bool(True)) # True\par
+print(bool(1)) # True\par
+print(bool('Hello')) # True\par
+Boolean Operators and Short-circuiting\par
+Definition: These are special operators that allow you to combine multiple expressions to create more complex decision-making logic in your code. There are three Boolean operators in Python: and, or, and not.\par
+and Operator: This operator takes two operands and returns the first operand if it is falsy, otherwise, it returns the second operand. Both operands must be truthy for an expression to result in a truthy value.\par
+is_citizen = True\par
+age = 25\par
+\par
+print(is_citizen and age) # 25\par
+You can also use the and operator in conditionals like this:\par
+\par
+is_citizen = True\par
+age = 25\par
+\par
+if is_citizen and age >= 18:\par
+    print('You are eligible to vote') # You are eligible to vote\par
+else:\par
+    print('You are not eligible to vote')\par
+or Operator: This operator returns the first operand if it is truthy, otherwise, it returns the second operand. An or expression results in a truthy value if at least one operand is truthy. Here is an example:\par
+age = 19\par
+is_employed = False\par
+\par
+print(age or is_employed) # 19\par
+Just like with the and operator, you can use the or operator in conditionals like this:\par
+\par
+age = 19\par
+is_student = True\par
+\par
+if age < 18 or is_student:\par
+    print('You are eligible for a student discount') # You are eligible for a student discount\par
+else:\par
+    print('You are not eligible for a student discount')\par
+Short-circuiting: The and and or operators are known as a short-circuit operators. Short-circuiting means Python checks values from left to right and stops as soon as it determines the final result.\par
+not Operator: This operator takes a single operand and inverts its boolean value. It converts truthy values to False and falsy values to True. Unlike the previous operators we looked at, not always returns True or False. Here are some examples:\par
+print(not '') # True, because empty string is falsy\par
+print(not 'Hello') # False, because non-empty string is truthy\par
+print(not 0) # True, because 0 is falsy\par
+print(not 1) # False, because 1 is truthy\par
+print(not False) # True, because False is falsy\par
+print(not True) # False, because True is truthy\par
+Here is an example of the not operator in a conditional:\par
+\par
+is_admin = False\par
+\par
+if not is_admin:\par
+    print('Access denied for non-administrators.') # Access denied for non-administrators.\par
+else:\par
+    print('Welcome, Administrator!')\f0\par
+}
+ 
