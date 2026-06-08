@@ -1,0 +1,3 @@
+Definition: Strings are immutable which means you can not change them after
+they have been created. In Python, you can use either single or double quotes.
+It is recommended to choose a rule and stick with it

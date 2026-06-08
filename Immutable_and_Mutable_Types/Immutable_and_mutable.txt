@@ -1,0 +1,2 @@
+Immutable Types: These types cannot change once declared, although you can point their variables at something new, which is called reassignment. They include integer, float, complex, boolean, string, tuple, range, and None.
+Mutable Types: These types can change once declared. You can add, remove, or update their items. They include collection types such as list, set, and dictionary.
