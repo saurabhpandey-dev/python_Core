@@ -1,0 +1,4 @@
+Working with Functions
+Definition: Functions are reusable pieces of code that take inputs (arguments)
+and returns an output. To call a function, you need to reference the function
+name followed by a set of parenthesis.
