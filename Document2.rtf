@@ -1,0 +1,498 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.10586}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Loops and Sequences Review\par
+Python Lists\par
+Introduction: In Python, the list data type is an ordered sequence of elements that can be composed of strings, numbers or even other lists. Lists are mutable and zero based indexed.\par
+Example Code\par
+cities = ['Los Angeles', 'London', 'Tokyo']\par
+Accessing Elements in a List: To access an element from the cities list, you can reference its index number in the sequence:\par
+Example Code\par
+cities = ['Los Angeles', 'London', 'Tokyo']\par
+cities[0] # Los Angeles\par
+Accessing Elements Using Negative Indexing: To access the last element of any list, you can use -1 as the index number:\par
+Example Code\par
+cities = ['Los Angeles', 'London', 'Tokyo']\par
+cities[-1] # Tokyo\par
+Negative indexing is used to access elements starting from the end of the list instead of the beginning at index 0.\par
+\par
+Creating Lists Using the list() constructor: Lists can also be created using the list() constructor. The list() constructor is used to convert an iterable into a list:\par
+\par
+Example Code\par
+developer = 'Jessica'\par
+\par
+print(list(developer)) \par
+# Result: ['J', 'e', 's', 's', 'i', 'c', 'a']\par
+Finding the Length of a List: You can use the len() function to get the length of a list:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5]\par
+len(numbers) # 5\par
+List Mutability: Lists are mutable, meaning you can update any element in the list as long as you pass in a valid index number. To update lists at a particular index, you can assign a new value to that index:\par
+Example Code\par
+programming_languages = ['Python', 'Java', 'C++', 'Rust']\par
+programming_languages[0] = 'JavaScript'\par
+print(programming_languages) # ['JavaScript', 'Java', 'C++', 'Rust']\par
+Index Out of Range Error: If you pass in an index (either positive or negative) that is out of bounds for the list, then you will receive an IndexError:\par
+Example Code\par
+programming_languages = ['Python', 'Java', 'C++', 'Rust']\par
+programming_languages[10] = 'JavaScript'\par
+\par
+"""\par
+Traceback (most recent call last):\par
+  File "<stdin>", line 1, in <module>\par
+IndexError: list assignment index out of range\par
+"""\par
+Removing Elements from a List: Elements can be removed from a list using the del keyword:\par
+Example Code\par
+developer = ['Jane Doe', 23, 'Python Developer']\par
+del developer[1]\par
+print(developer) # ['Jane Doe', 'Python Developer']\par
+Checking if an Element Exists in a List: The in keyword can be used to check if an element exists in a list:\par
+Example Code\par
+programming_languages = ['Python', 'Java', 'C++', 'Rust']\par
+\par
+'Rust' in programming_languages # True\par
+'JavaScript' in programming_languages # False\par
+Nesting Lists: Lists can be nested inside other lists:\par
+Example Code\par
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]\par
+To access the nested list, you will need to access it using index 2 since lists are zero-based indexed.\par
+Example Code\par
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]\par
+developer[2] # ['Python', 'Rust', 'C++']\par
+To further access the second language from that nested list, you will need to access it using index 1:\par
+Example Code\par
+developer = ['Alice', 25, ['Python', 'Rust', 'C++']]\par
+developer[2][1] # Rust\par
+Unpacking Values from a List: Unpacking values from a list is a technique used to assign values from a list to new variables. Here is an example to unpack the developer list into new variables called name, age and job like this:\par
+Example Code\par
+developer = ['Alice', 34, 'Rust Developer']\par
+name, age, job = developer\par
+If the number of variables on the left side of the assignment operator doesn't match the total number of items in the list, then you will receive a ValueError.\par
+\par
+Collecting Remaining Items From a List: To collect any remaining elements from a list, you can use the asterisk (*) operator like this:\par
+\par
+Example Code\par
+developer = ['Alice', 34, 'Rust Developer']\par
+name, *rest = developer\par
+Slicing Lists: Slicing is the concept of accessing a portion of a list by using the slice operator :. To slice a list that starts at index 1 and ends before index 3, you can use the following syntax:\par
+Example Code\par
+desserts = ['Cake', 'Cookies', 'Ice Cream', 'Pie']\par
+desserts[1:3] # ['Cookies', 'Ice Cream']\par
+Step Intervals: It is also possible to specify a step interval which determines how much to increment between the indices. Here is an example if you want to extract a list of just even numbers using slicing:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5, 6]\par
+numbers[1::2] # [2, 4, 6]\par
+List Methods\par
+append(): Used to add an item to the end of the list. Here is an example of using the append() method to add the number 6 to this numbers list:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5]\par
+numbers.append(6)\par
+print(numbers) # [1, 2, 3, 4, 5, 6]\par
+Appending lists: The append() method can also be used to add one list at the end of another:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5]\par
+even_numbers = [6, 8, 10]\par
+\par
+numbers.append(even_numbers)\par
+print(numbers) # [1, 2, 3, 4, 5, [6, 8, 10]]\par
+extend(): Used to add multiple items to the end of a list. Here is an example of adding the numbers 6, 8, and 10 to the end of the numbers list:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5]\par
+even_numbers = [6, 8, 10]\par
+\par
+numbers.extend(even_numbers)\par
+print(numbers) # [1, 2, 3, 4, 5, 6, 8, 10]\par
+insert(): Used to insert an item at a specific index in the list. Here is an example of using the insert() method:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5]\par
+numbers.insert(2, 2.5)\par
+\par
+print(numbers) # [1, 2, 2.5, 3, 4, 5]\par
+remove(): Used to remove an item from the list. The remove() method will only remove the first occurrence of an item in the list:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5, 5, 5]\par
+numbers.remove(5)\par
+\par
+print(numbers) # [1, 2, 3, 4, 5, 5]\par
+\par
+pop(): Used to remove a specific item from the list and return it:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5]\par
+numbers.pop(1) # The number 2 is returned\par
+If you don't specify an element for the pop method, then the last element is removed.\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5]\par
+numbers.pop() # The number 5 is returned\par
+clear(): Used to remove all items from the list:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5]\par
+numbers.clear()\par
+\par
+print(numbers) # []\par
+sort(): The sort() method is used to sort the elements in place. Here is an example of sorting a random list of numbers in place:\par
+Example Code\par
+numbers = [19, 2, 35, 1, 67, 41]\par
+numbers.sort()\par
+\par
+print(numbers) # [1, 2, 19, 35, 41, 67]\par
+sorted(): A built-in function that returns a new sorted list instead of modifying the original list:\par
+Example Code\par
+numbers = [19, 2, 35, 1, 67, 41]\par
+sorted_numbers = sorted(numbers)\par
+\par
+print(sorted_numbers) # [1, 2, 19, 35, 41, 67]\par
+print(numbers) # [19, 2, 35, 1, 67, 41]\par
+reverse(): Used to reverse the order of the elements in a list:\par
+Example Code\par
+numbers = [6, 5, 4, 3, 2, 1]\par
+numbers.reverse()\par
+\par
+print(numbers) # [1, 2, 3, 4, 5, 6]\par
+index(): Used to find the first index where an element can be found in a list:\par
+Example Code\par
+programming_languages = ['Rust', 'Java', 'Python', 'C++']\par
+programming_languages.index('Java') # 1\par
+If the element cannot be found using the index() method, then the result will be a ValueError.\par
+Tuples in Python\par
+Definition: A tuple is a Python data type used to create an ordered sequence of values. Tuples can contain a mixed set of data types:\par
+Example Code\par
+developer = ('Alice', 34, 'Rust Developer')\par
+Tuples are immutable, meaning the elements in the tuple cannot be changed once created. If you try to update one of the items in the tuple, you will get a TypeError:\par
+Example Code\par
+programming_languages = ('Python', 'Java', 'C++', 'Rust')\par
+programming_languages[0] = 'JavaScript'\par
+\par
+"""\par
+Traceback (most recent call last):\par
+  File "<stdin>", line 1, in <module>\par
+TypeError: "tuple" object does not support item assignment\par
+"""\par
+Accessing Elements from a Tuple: To access an element from a tuple, use bracket notation and the index number:\par
+Example Code\par
+developer = ('Alice', 34, 'Rust Developer')\par
+developer[1] # 34\par
+Negative indexing can be used to access elements starting from the end of the tuple:\par
+Example Code\par
+numbers = (1, 2, 3, 4, 5)\par
+numbers[-2] # 4\par
+If you try to pass in an index number that exceeds or equals the length of the tuple, then you will receive an IndexError:\par
+Example Code\par
+numbers = (1, 2, 3, 4, 5)\par
+numbers[7]\par
+\par
+"""\par
+Traceback (most recent call last):\par
+  File "<stdin>", line 1, in <module>\par
+IndexError: tuple index out of range\par
+"""\par
+A tuple can also be created using the tuple() constructor. Within the constructor, you can pass in different iterables like strings, lists and even other tuples.\par
+Example Code\par
+developer = 'Jessica'\par
+\par
+print(tuple(developer)) \par
+# Result: ('J', 'e', 's', 's', 'i', 'c', 'a')\par
+Verifying Items in a Tuple: To check if an item is in a tuple, you can use the in keyword like this:\par
+Example Code\par
+programming_languages = ('Python', 'Java', 'C++', 'Rust')\par
+\par
+'Rust' in programming_languages # True\par
+'JavaScript' in programming_languages # False\par
+Unpacking Tuples: Items can be unpacked from a tuple like this:\par
+Example Code\par
+developer = ('Alice', 34, 'Rust Developer')\par
+name, age, job = developer\par
+If you need to collect any remaining elements from a tuple, you can use the asterisk (*) operator like this:\par
+Example Code\par
+developer = ('Alice', 34, 'Rust Developer')\par
+name, *rest = developer\par
+Slicing Tuples: Slicing can be used to extract a portion of a tuple. For example, the items pie and cookies can be sliced into a separate tuple:\par
+Example Code\par
+desserts = ('cake', 'pie', 'cookies', 'ice cream')\par
+desserts[1:3] # ('pie', 'cookies')\par
+Removing Items from Tuples: Removing an item from a tuple will raise a TypeError as tuples are immutable:\par
+Example Code\par
+developer = ('Jane Doe', 23, 'Python Developer')\par
+del developer[1]\par
+\par
+"""\par
+Traceback (most recent call last):\par
+  File "<stdin>", line 1, in <module>\par
+TypeError: "tuple" object doesn't support item deletion\par
+"""\par
+When to use a Tuple vs a List?: If you need a dynamic collection of elements where you can add, remove and update elements, then you should use a list. If you know that you are working with a fixed and immutable collection of data, then you should use a tuple.\par
+Common Tuple Methods\par
+count(): Used to determine how many times an item appears in a tuple. For example, you can check how many times the language 'Rust' appears in the tuple:\par
+Example Code\par
+programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust')\par
+programming_languages.count('Rust') # 2\par
+If the specified item in the count() method is not present at all in the tuple, then the return value will be 0:\par
+Example Code\par
+programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust')\par
+programming_languages.count('JavaScript') # 0\par
+If no arguments are passed to the count() method, then Python will return a TypeError.\par
+\par
+index(): Used to find the index where a particular item is present in the tuple. Here is an example of using the index() method to find the index for the language 'Java':\par
+\par
+Example Code\par
+programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust')\par
+programming_languages.index('Java') # 1\par
+If the specified item cannot be found, then Python will return a ValueError.\par
+\par
+You can pass an optional start index to the index() method to specify where to start searching for the item in the tuple:\par
+\par
+Example Code\par
+programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust', 'Python')\par
+programming_languages.index('Python', 3) # 5\par
+You can also pass in an optional end index to the index() method to specify where to stop searching for the item in the tuple:\par
+Example Code\par
+programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust', 'Python', 'JavaScript', 'Python')\par
+programming_languages.index('Python', 2, 5) # 2\par
+sorted(): Used to sort the elements in any iterable and return a new sorted list. Here is an example of creating a new list of numbers using the sorted() function:\par
+Example Code\par
+numbers = (13, 2, 78, 3, 45, 67, 18, 7)\par
+sorted(numbers) # [2, 3, 7, 13, 18, 45, 67, 78]\par
+Modifying Sorting Behavior: You can customize the sorting behavior for an iterable using the optional reverse and key arguments. Here is an example of using the key argument to sort items in a tuple by length:\par
+Example Code\par
+programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust', 'Python')\par
+sorted(programming_languages, key=len)\par
+\par
+# Result\par
+# ['C++', 'Rust', 'Java', 'Rust', 'Python', 'Python']\par
+You can create a new list of values in reverse order, using the reverse argument like this:\par
+Example Code\par
+programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust', 'Python')\par
+\par
+print(sorted(programming_languages, reverse=True))\par
+\par
+# Result\par
+# ['Rust', 'Rust', 'Python', 'Python', 'Java', 'C++']\par
+Loops in Python\par
+Definition: Loops are used to repeat a block of code for a set number of times.\par
+\par
+for loop: Used to iterate over a sequence (like a list, tuple or string) and execute a block of code for each item in that sequence. Here is an example of using a for loop to iterate through a list and print each language to the console:\par
+\par
+Example Code\par
+programming_languages = ['Rust', 'Java', 'Python', 'C++']\par
+\par
+for language in programming_languages:\par
+    print(language)\par
+\par
+"""\par
+Result \par
+\par
+Rust\par
+Java\par
+Python\par
+C++\par
+"""\par
+Here is an example of using a for loop to loop through the string code and print out each character:\par
+Example Code\par
+for char in 'code':\par
+    print(char)\par
+\par
+"""\par
+Result \par
+\par
+c\par
+o\par
+d\par
+e\par
+"""\par
+for loops can be nested. Here is an example of using a nested for loop:\par
+Example Code\par
+categories = ['Fruit', 'Vegetable']\par
+foods = ['Apple', 'Carrot', 'Banana']\par
+\par
+for category in categories:\par
+    for food in foods:\par
+        print(category, food)\par
+\par
+"""\par
+Result\par
+\par
+Fruit Apple\par
+Fruit Carrot\par
+Fruit Banana\par
+Vegetable Apple\par
+Vegetable Carrot\par
+Vegetable Banana\par
+"""\par
+\par
+while loop: Repeats a block of code until the condition is False. Here is an example of using a while loop for a guessing game:\par
+Example Code\par
+secret_number = 3\par
+guess = 0\par
+\par
+while guess != secret_number:\par
+    guess = int(input('Guess the number (1-5): '))\par
+    if guess != secret_number:\par
+        print('Wrong! Try again.')\par
+\par
+print('You got it!')\par
+\par
+"""\par
+Result\par
+\par
+Guess the number (1-5): 2\par
+Wrong! Try again.\par
+Guess the number (1-5): 1\par
+Wrong! Try again.\par
+Guess the number (1-5): 3\par
+You got it!\par
+"""\par
+\par
+break and continue statements: Used in loops to modify the execution of a loop.\par
+\par
+The break statement is used to exit the loop immediately when a certain condition is met. Here is an example of using the break statement for a list of developer_names:\par
+\par
+Example Code\par
+developer_names = ['Jess', 'Naomi', 'Tom']\par
+\par
+for developer in developer_names:\par
+    if developer == 'Naomi':\par
+        break\par
+    print(developer)\par
+The continue statement is used to skip that current iteration and move onto the next iteration of the loop. Here is an example to use the continue statement instead of a break statement:\par
+Example Code\par
+developer_names = ['Jess', 'Naomi', 'Tom']\par
+\par
+for developer in developer_names:\par
+    if developer == 'Naomi':\par
+        continue\par
+    print(developer)\par
+Both for and while loops can be combined with an else clause, which is executed only when the loop was not terminated by a break:\par
+Example Code\par
+words = ['sky', 'apple', 'rhythm', 'fly', 'orange']\par
+\par
+for word in words:\par
+    for letter in word:\par
+        if letter.lower() in 'aeiou':\par
+            print(f"'\{word\}' contains the vowel '\{letter\}'")\par
+            break\par
+    else:\par
+        print(f"'\{word\}' has no vowels")\par
+Ranges and Their Use in Loops\par
+The range() function: Used to generate a sequence of integers.\par
+Example Code\par
+range(start, stop, step)\par
+The required stop argument is an integer(non-inclusive) that represents the end point for the sequence of numbers being generated. Here is an example of using the range() function:\par
+Example Code\par
+for num in range(3):\par
+    print(num)\par
+If a start argument is not specified, then the default will be 0. By default the sequence of integers will increment by 1. You can use the optional step argument to change the default increment value. Here is an example of generating a sequence of even integers from 2 up to but not including 11 (i.e., includes 10)\par
+Example Code\par
+for num in range(2, 11, 2):\par
+    print(num)\par
+If you don't provide any arguments to the range() function, then you will get a TypeError.\par
+\par
+The range() function only accepts integers for arguments and not floats. Using floats will also result in a TypeError:\par
+\par
+Example Code\par
+ERROR!\par
+Traceback (most recent call last):\par
+  File "<main.py>", line 1, in <module>\par
+TypeError: 'float' object cannot be interpreted as an integer\par
+You can use a negative integer for the step argument to generate a sequence of integers in decrementing order:\par
+Example Code\par
+for num in range(40, 0, -10):\par
+    print(num)\par
+The range() function can also be used to create a list of integers by using it with the list constructor. The list constructor is used to convert an iterable into a list. Here is an example of generating a list of even integers between 2 and 10 inclusive:\par
+Example Code\par
+numbers = list(range(2, 11, 2))\par
+print(numbers) # [2, 4, 6, 8, 10]\par
+enumerate() and zip() functions in Python\par
+enumerate(): used to iterate over a sequence and keep track of the index for each item in that sequence. The enumerate() function takes an iterable as an argument and returns an enumerate object that consist of the index and value of each item in the iterable.\par
+Example Code\par
+languages = ['Spanish', 'English', 'Russian', 'Chinese']\par
+\par
+for index, language in enumerate(languages):\par
+    print(f'Index \{index\} and language \{language\}')\par
+\par
+# Result\par
+# Index 0 and language Spanish\par
+# Index 1 and language English\par
+# Index 2 and language Russian\par
+# Index 3 and language Chinese\par
+\par
+The enumerate() function can also be used outside of a for loop:\par
+Example Code\par
+languages = ['Spanish', 'English', 'Russian', 'Chinese']\par
+\par
+print(list(enumerate(languages)))\par
+# [(0, 'Spanish'), (1, 'English'), (2, 'Russian'), (3, 'Chinese')]\par
+The enumerate() function also accepts an optional start argument that specifies the starting value for the count. If this argument is omitted, then the count will begin at 0.\par
+\par
+zip() : Used to iterate over multiple iterables in parallel. Here's an example using the zip() function to iterate over developers and ids:\par
+\par
+Example Code\par
+developers = ['Naomi', 'Dario', 'Jessica', 'Tom']\par
+ids = [1, 2, 3, 4]\par
+\par
+for name, id in zip(developers, ids):\par
+    print(f'Name: \{name\}')\par
+    print(f'ID: \{id\}')\par
+\par
+\par
+"""\par
+Result\par
+\par
+Name: Naomi\par
+ID: 1\par
+Name: Dario\par
+ID: 2\par
+Name: Jessica\par
+ID: 3\par
+Name: Tom\par
+ID: 4\par
+"""\par
+\par
+List comprehensions in Python\par
+Definition: List comprehension allows you to create a new list in a single line by combining the loop and the condition directly within square brackets. This makes the code shorter and often easier to read.\par
+Example Code\par
+even_numbers = [num for num in range(21) if num % 2 == 0]\par
+print(even_numbers)\par
+Iterable methods\par
+filter(): Used to filter elements from an iterable based on a condition. It returns an iterator that contains only the elements that satisfy the condition. Here is an example of creating a new list of just words longer than four characters:\par
+Example Code\par
+words = ['tree', 'sky', 'mountain', 'river', 'cloud', 'sun']\par
+\par
+def is_long_word(word):\par
+    return len(word) > 4\par
+\par
+long_words = list(filter(is_long_word, words))\par
+print(long_words) # ['mountain', 'river', 'cloud']\par
+map(): Used to apply a function to each item in an iterable and return a new iterable with the results. Here is an example of using the map() function to convert a list of celsius temperatures to fahrenheit:\par
+Example Code\par
+celsius = [0, 10, 20, 30, 40]\par
+\par
+def to_fahrenheit(temp):\par
+    return (temp * 9/5) + 32\par
+\par
+fahrenheit = list(map(to_fahrenheit, celsius))\par
+print(fahrenheit) # [32.0, 50.0, 68.0, 86.0, 104.0]\par
+sum(): Used to get the sum from an iterable like a list or tuple. Here is an example of using the sum() function:\par
+Example Code\par
+numbers = [5, 10, 15, 20]\par
+total = sum(numbers)\par
+print(total) # Result: 50\par
+You can also pass in an optional start argument which sets the initial value for the summation. Here is an updated example using the start argument as a positional argument:\par
+Example Code\par
+numbers = [5, 10, 15, 20]\par
+total = sum(numbers, 10) # positional argument\par
+print(total) # 60\par
+You can also choose to use the start argument as a keyword argument like this instead:\par
+Example Code\par
+numbers = [5, 10, 15, 20]\par
+total = sum(numbers, start=10) # keyword argument\par
+print(total) # 60\par
+Lambda functions\par
+Definition: A lambda function in Python is a concise way to create a function without a name (an anonymous function).\par
+Lambda functions are often used as an argument to another function. Here is an example of a lambda function:\par
+Example Code\par
+numbers = [1, 2, 3, 4, 5]\par
+\par
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))\par
+print(even_numbers)  # [2, 4]\par
+Best practices for using lambda functions include not assigning them to a variable, keeping them simple and readable, and using them for short, one-off functions.\par
+}
+ 
