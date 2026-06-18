@@ -1,0 +1,267 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.10586}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Dictionaries and Sets Review\par
+Dictionaries\par
+Dictionaries: Dictionaries are built-in data structures that store collections of key-value pairs. Keys need to be immutable data types. This is the general syntax of a Python dictionary:\par
+Example Code\par
+dictionary = \{\par
+    key1: value1,\par
+    key2: value2\par
+\}\par
+dict() Constructor: The dict() constructor is an alternative way to build the dictionary. You pass a list of tuples as an argument to the dict() constructor. These tuples contain the key as the first element and the value as the second element.\par
+Example Code\par
+pizza = dict([('name', 'Margherita Pizza'), ('price', 8.9), ('calories_per_slice', 250), ('toppings', ['mozzarella', 'basil'])])\par
+Bracket Notation: To access the value of a key-value pair, you can use the syntax known as bracket notation.\par
+Example Code\par
+dictionary[key]\par
+Common Dictionary Methods\par
+get() Method: The get() method retrieves the value associated with a key. It's similar to the bracket notation, but it lets you set a default value, preventing errors if the key doesn't exist.\par
+Example Code\par
+dictionary.get(key, default)\par
+keys() and values() Methods: The keys() and values() methods return a view object with all the keys and values in the dictionary, respectively. A view object is a way to see the content of a dictionary without creating a separate copy of the data.\par
+Example Code\par
+pizza = \{\par
+    'name': 'Margherita Pizza',\par
+    'price': 8.9,\par
+    'calories_per_slice': 250\par
+\}\par
+\par
+pizza.keys()\par
+# dict_keys(['name', 'price', 'calories_per_slice'])\par
+\par
+pizza.values()\par
+# dict_values(['Margherita Pizza', 8.9, 250])\par
+items() Method: The items() method returns a view object with all the key-value pairs in the dictionary, including both the keys and the values.\par
+Example Code\par
+pizza.items()\par
+# dict_items([('name', 'Margherita Pizza'), ('price', 8.9), ('calories_per_slice', 250)])\par
+clear() Method: The clear() method removes all the key-value pairs from the dictionary.\par
+Example Code\par
+pizza.clear()\par
+pop() Method: The pop() method removes the key-value pair with the key specified as the first argument and returns its value. If the key doesn't exist, it returns the default value specified as the second argument. If the key doesn't exist and the default value is not specified, a KeyError is raised.\par
+Example Code\par
+pizza.pop('price', 10)\par
+pizza.pop('total_price') # KeyError\par
+popitem() Method: In Python 3.7 and above, the popitem() method removes the last inserted item.\par
+Example Code\par
+pizza.popitem()\par
+update() Method: The update() method updates the key-value pairs with the key-value pairs of another dictionary. If they have keys in common, their values are overwritten. New keys will be added to the dictionary as new key-value pairs.\par
+Example Code\par
+pizza.update(\{ 'price': 15, 'total_time': 25 \})\par
+Looping Over a Dictionary\par
+Iterating Over Values: If you need to iterate over the values in a dictionary, you can write a for loop with values() to get all the values of a dictionary.\par
+Example Code\par
+products = \{\par
+    'Laptop': 990,\par
+    'Smartphone': 600,\par
+    'Tablet': 250,\par
+    'Headphones': 70,\par
+\}\par
+\par
+for price in products.values():\par
+    print(price)\par
+Output:\par
+\par
+Example Code\par
+990\par
+600\par
+250\par
+70\par
+Iterating Over Keys: If you need to iterate over the keys in the products dictionary above, you can write products.keys() or products directly.\par
+Example Code\par
+for product in products.keys():\par
+    print(product)\par
+\par
+# Or\par
+\par
+for product in products:\par
+    print(product)\par
+Output:\par
+\par
+Example Code\par
+Laptop\par
+Smartphone\par
+Tablet\par
+Headphones\par
+Iterating Over Key-Value Pairs: If you need to iterate over the keys and their corresponding values simultaneously, you can iterate over products.items(). You get individual tuples with the keys and their corresponding values.\par
+Example Code\par
+for product in products.items():\par
+    print(product)\par
+Output:\par
+\par
+Example Code\par
+('Laptop', 990)\par
+('Smartphone', 600)\par
+('Tablet', 250)\par
+('Headphones', 70)\par
+To store the key and value in separate loop variables, you need to separate them with a comma. The first variable stores the key, and the second stores the value.\par
+\par
+Example Code\par
+for product, price in products.items():\par
+    print(product, price)\par
+Output:\par
+\par
+Example Code\par
+Laptop 990\par
+Smartphone 600\par
+Tablet 250\par
+Headphones 70\par
+enumerate() Function: If you need to iterate over a dictionary while keeping track of a counter, you can call the enumerate() function. The function returns an enumerate object, which assigns an integer to each item, like a counter. You can start the counter from any number, but by default, it starts from 0.\par
+Assigning the index and item to separate loop variables is the common way to use enumerate(). For example, with products.items(), you can get the entire key-value pair in addition to the index:\par
+\par
+Example Code\par
+for index, product in enumerate(products.items()):\par
+    print(index, product)\par
+Output:\par
+\par
+Example Code\par
+0 ('Laptop', 990)\par
+1 ('Smartphone', 600)\par
+2 ('Tablet', 250)\par
+3 ('Headphones', 70)\par
+To customize the initial value of the count, you can pass a second argument to enumerate(). For example, here we are starting the count from 1.\par
+\par
+Example Code\par
+for index, product in enumerate(products.items(), 1):\par
+    print(index, product)\par
+Output:\par
+\par
+Example Code\par
+1 ('Laptop', 990)\par
+2 ('Smartphone', 600)\par
+3 ('Tablet', 250)\par
+4 ('Headphones', 70)\par
+Sets\par
+Sets: Sets are built-in data structures in Python that do not allow duplicate values. Sets are mutable and unordered, which means that their elements are not stored in any specific order, so you cannot use indices or keys to access them. Also, sets can only contain values of immutable data types, like numbers, strings, and tuples.\par
+\par
+Defining a Set: To define a set, you need to write its elements within curly brackets and separate them with commas.\par
+\par
+Example Code\par
+my_set = \{1, 2, 3, 4, 5\}\par
+Defining an Empty Set: If you need to define an empty set, you must use the set() function. Only writing empty curly braces will automatically create a dictionary.\par
+Example Code\par
+set() # Set\par
+\{\}    # Dictionary\par
+Common Set Methods\par
+add() Method: You can add an element to a set with the add() method, passing the new element as an argument.\par
+Example Code\par
+my_set.add(6)\par
+remove() and discard() Methods: To remove an element from a set, you can either use the remove() method or the discard() method, passing the element you want to remove as an argument. The remove() method will raise a KeyError if the element is not found while the discard() method will not.\par
+Example Code\par
+my_set.remove(4)\par
+my_set.discard(4)\par
+clear() method: The clear() method removes all the elements from the set.\par
+Example Code\par
+my_set.clear()\par
+Mathematical Set Operations\par
+issubset() and issuperset() Methods: The issubset() and the issuperset() methods check if a set is a subset or superset of another set, respectively.\par
+Example Code\par
+my_set = \{1, 2, 3, 4, 5\}\par
+your_set = \{2, 3, 4, 5\}\par
+\par
+print(your_set.issubset(my_set)) # True\par
+print(my_set.issuperset(your_set)) # True\par
+isdisjoint() Method: The isdisjoint() method checks if two sets are disjoint, if they don't have elements in common.\par
+Example Code\par
+my_set = \{1, 2, 3\}\par
+your_set = \{4, 5, 6\}\par
+\par
+print(my_set.isdisjoint(your_set)) # True\par
+Union Operator (|): The union operator | returns a new set with all the elements from both sets.\par
+Example Code\par
+my_set = \{1, 2, 3\}\par
+your_set = \{4, 5, 6\}\par
+\par
+my_set | your_set # \{1, 2, 3, 4, 5, 6\}\par
+Intersection Operator (&): The intersection operator & returns a new set with only the elements that the sets have in common.\par
+Example Code\par
+my_set = \{1, 2, 3, 4, 5\}\par
+your_set = \{2, 3, 4, 6\}\par
+\par
+my_set & your_set # \{2, 3, 4\}\par
+Difference Operator (-): The difference operator - returns a new set with the elements of the first set that are not in the other sets.\par
+Example Code\par
+my_set = \{1, 2, 3, 4, 5\}\par
+your_set = \{2, 3, 4, 6\}\par
+\par
+my_set - your_set # \{1, 5\}\par
+Symmetric Difference Operator (^): The symmetric difference operator ^ returns a new set with the elements that are either in the first or the second set, but not both.\par
+Example Code\par
+my_set = \{1, 2, 3, 4, 5\}\par
+your_set = \{2, 3, 4, 6\}\par
+\par
+my_set ^ your_set # \{1, 5, 6\}\par
+in Operator: You can check if an element is in a set or not with the in operator.\par
+Example Code\par
+print(5 in my_set) # True\par
+Python Standard Library\par
+Python Standard Library: A library gives you pre-written and reusable code, like functions, classes, and data structures, that you can reuse in your projects. Python has an extensive standard library with built-in modules that implement standardized solutions for many problems and tasks. Some examples of popular built-in modules are math, random, re (short for "regular expressions"), and datetime.\par
+Import Statement\par
+Import Statement: To access the elements defined in built-in modules, you use an import statement. Import statements are generally written at the top of the file. Import statements work the same for functions, classes, constants, variables, and any other elements defined in the module.\par
+\par
+Basic Import Statement: You can use the import keyword followed by the name of the module:\par
+\par
+Example Code\par
+import module_name\par
+Then, if you need to call a function from that module, you would use dot notation, with the name of the module followed by the name of the function.\par
+\par
+Example Code\par
+module_name.function_name()\par
+For example, you would write the following in your code to import the math module and get the square root of 36:\par
+\par
+Example Code\par
+import math\par
+\par
+math.sqrt(36)\par
+Importing a Module with a Different Name: If you need to import the module with a different name (also known as an "alias"), you can use as followed by the alias at the end of the import statement. This is often used for long module names or to avoid naming conflicts.\par
+Example Code\par
+import module_name as module_alias\par
+For example, to refer to the math module as m in your code, you can assign an alias like this:\par
+\par
+Example Code\par
+import math as m\par
+Then, you can access the elements of the module using the alias:\par
+\par
+Example Code\par
+m.sqrt(36)\par
+Importing Specific Elements: If you don't need everything from a module, you can import specific elements using from. In this case, the import statement starts with from, followed by the module name, then the import keyword, and finally the names of the elements you want to import.\par
+Example Code\par
+from module_name import name1, name2\par
+Then, you can use these names without the module prefix in your Python script. For example:\par
+\par
+Example Code\par
+from math import radians, sin, cos\par
+\par
+angle_degrees = 40\par
+angle_radians = radians(angle_degrees)\par
+\par
+sine_value = sin(angle_radians)\par
+cos_value = cos(angle_radians)\par
+\par
+print(sine_value) # 0.6427876096865393\par
+print(cos_value)  # 0.766044443118978\par
+This is helpful, but it can result in naming conflicts if you already have functions or variables with the same name. Keep it in mind when choosing which type of import statement you want to use.\par
+\par
+If you need to assign aliases to these names, you can do so as well, using the as keyword followed by the alias.\par
+\par
+Example Code\par
+from module_name import name1 as alias1, name2 as alias2\par
+Import Statement with Asterisk (*): The asterisk tells Python that you want to import everything in that module, but you want to import it so that you don't need to use the name of the module as a prefix.\par
+Example Code\par
+from module_name import *\par
+For example, if you use this to import the math module, you'll be able to call any function defined in that module without specifying the name of the module as a prefix.\par
+\par
+Example Code\par
+from math import *\par
+print(sqrt(36))  # 6.0\par
+However, this is generally discouraged because it can lead to namespace collisions and make it harder to know where names come from.\par
+\par
+if __name__ == '__main__'\par
+__name__ Variable: __name__ is a special built-in variable in Python. When a Python file is executed directly, Python sets the value of this variable to the string "__main__". But if the Python file is imported as a module into another Python script, the value of the __name__ variable is set to the name of that module.\par
+This is why you'll often find this conditional in Python scripts. It contains the code that you only want to run only if the Python script is running as the main program.\par
+\par
+Example Code\par
+if __name__ == '__main__': \par
+    # Code\par
+}
+ 
