@@ -1,3 +1,4 @@
+# Todo list created
 lst = []
 
 def show_lst():
