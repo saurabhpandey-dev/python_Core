@@ -1,3 +1,4 @@
+
 ##Data Types in Python
 ##Introduction: Python is a dynamically-typed meaning you don't need to
 ##explicitly declare types for variables. The language knows what the type
