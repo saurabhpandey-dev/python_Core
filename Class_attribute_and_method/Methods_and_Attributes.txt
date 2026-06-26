@@ -1,0 +1,9 @@
+Attributes are variables that belong to an object, so they hold data.
+There are two kinds of attributes: instance attributes and class attributes.
+
+Instance attributes are unique to each object created from a class,
+and you usually set them with the __init__ method. Class attributes,
+on the other hand, belong to the class itself and are shared by all instances
+of that class.
+
+To access an attribute, you use dot notation.
