@@ -1,0 +1,33 @@
+Attributes being the variables that belong to an object. That means they hold
+data that describes the state or behavior of the object.
+
+For example, a car would normally have a brand and model. The brand and
+model could make attributes for a Car class:
+
+    class Car: 
+        def __init__(self, brand, model): 
+            self.brand = brand 
+            self.model = model 
+
+    my_car = Car('Lamborghini', 'Gallardo') 
+    print(my_car.brand) # Lamborghini 
+    print(my_car.model) # Gallardo
+    
+But sometimes, you might not know which attributes you need until
+your program is running. Imagine you're writing a script that receives
+attribute names from a user or a configuration file. Those are not attributes
+you can hardcode ahead of time.
+
+That's where handling attributes dynamically comes in. This way, you can
+access, modify, check, or even delete attributes using their names as
+variables, and not as fixed names in your code. This gives your program
+the flexibility to respond to different data or user input on the fly.
+
+Python gives you four handy built-in functions to dynamically work with
+object attributes. They are getattr(), setattr(), hasattr(), and delattr().
+
+They let you access, create, check, and remove attributes using variable names. Let's take a look at each one in action.
+
+getattr() makes it possible to read an attribute from an object when you
+don't know its name until runtime. If the attribute doesn't exist, it raises
+an AttributeError, unless you provide a default value.
