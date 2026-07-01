@@ -28,6 +28,3 @@ object attributes. They are getattr(), setattr(), hasattr(), and delattr().
 
 They let you access, create, check, and remove attributes using variable names. Let's take a look at each one in action.
 
-getattr() makes it possible to read an attribute from an object when you
-don't know its name until runtime. If the attribute doesn't exist, it raises
-an AttributeError, unless you provide a default value.
