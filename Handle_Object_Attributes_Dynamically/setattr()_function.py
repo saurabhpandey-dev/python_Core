@@ -9,8 +9,8 @@ class Student:
 
 stu1 = Student('Saurabh',23)
 
-att_name = input('Enter the name : ')
-att_value = input('Enter the value : ')
+att_name = input('Enter the attribute name : ')
+att_value = input('Enter the attribute value : ')
 
 setattr(stu1,att_name,att_value)
 
