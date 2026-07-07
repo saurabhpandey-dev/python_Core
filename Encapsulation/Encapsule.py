@@ -20,6 +20,10 @@ class Wallet:
 
    def get_balance(self):
         return self.__balance
+   
+   def validate(self,amount):
+       if amount<0:
+           raise ValueError('Amount must be positive')
     
 # account = Wallet(500)
 # print(account.get_balance()) # AttributeError: 'Wallet' object has no attribute '__balance'
