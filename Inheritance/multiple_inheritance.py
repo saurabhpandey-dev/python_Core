@@ -1,3 +1,5 @@
+# A child class inherits from two or more parent classes.
+
 class A:
     def name(self):
         print('Saurabh')
