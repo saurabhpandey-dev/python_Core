@@ -9,4 +9,4 @@ print(tup2)
 
 tup3 = tup1+tup2 
 
-print(tup3)
+print(tup3) # (1, 'ram', 2, 'sita')
