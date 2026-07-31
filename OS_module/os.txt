@@ -1,0 +1,7 @@
+the os module in python provides a way to intract with the operating system,
+allowing you to peform system-lvel tasks such as :
+    file and directory manipulation,
+    environment variable management,
+    and process handling.
+
+its portable across different OS like windows, macOS, Linux.
