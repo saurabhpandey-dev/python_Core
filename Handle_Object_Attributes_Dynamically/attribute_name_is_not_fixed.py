@@ -12,4 +12,5 @@ stu1 = Student('saurabh',22)
 
 attri = input('Enter the attribute name :- ')
 
-print(getattr(stu1,attri,'Attribute not found!'))
+print(getattr(stu1,attri,'Attribute not found!')) # getattr(object,attribute_name,'default_value)
+
